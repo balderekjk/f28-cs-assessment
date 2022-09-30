@@ -1,0 +1,32 @@
+Results for the extraLargeArray
+insert 828.8727 ms
+append 3.8379 ms
+
+Results for the largeArray
+insert 8.6776 ms
+append 476.9 μs
+
+Results for the mediumArray
+insert 168.2 μs
+append 137.8 μs
+
+Results for the smallArray
+insert 42 μs
+append 94.2 μs
+
+Results for the tinyArray
+insert 30.6 μs
+append 84.5 μs
+
+Explanatory Paragraph:
+Unshift method scales a lot more poorly than push as
+shown by the results. An array of over 100000 nums
+shows how significant the difference is (828.87ms
+vs. 3.84ms), 215x greater runtime, WOW. Reason being,
+unshift requires each entry of array to move indices,
+whereas push just appends to the end, and all other
+indices remain in same places. With that being said,
+I am still a bit perplexed as to why for small
+(< 100)arrays the unshift is (very slightly) faster
+than push, but it's so small it's almost negligible.
+Still, I would like to know.
